@@ -1,0 +1,47 @@
+# OrangeHRM QA Intern Assignment
+
+## Manual Test Cases
+
+### Login Functionality Test Cases
+
+| TC ID | Test Case Description | Test Steps | Expected Result | Actual Result | Status |
+|-------|-----------------------|------------|-----------------|---------------|--------|
+| TC-01 | Valid Login | 1. Navigate to login page<br>2. Enter valid username<br>3. Enter valid password<br>4. Click Login | User should be logged in successfully and redirected to dashboard | | |
+| TC-02 | Invalid Username | 1. Navigate to login page<br>2. Enter invalid username<br>3. Enter valid password<br>4. Click Login | Error message "Invalid credentials" should appear | | |
+| TC-03 | Invalid Password | 1. Navigate to login page<br>2. Enter valid username<br>3. Enter invalid password<br>4. Click Login | Error message "Invalid credentials" should appear | | |
+| TC-04 | Empty Username | 1. Navigate to login page<br>2. Leave username empty<br>3. Enter password<br>4. Click Login | "Required" error should appear under username field | | |
+| TC-05 | Empty Password | 1. Navigate to login page<br>2. Enter username<br>3. Leave password empty<br>4. Click Login | "Required" error should appear under password field | | |
+| TC-06 | Both Fields Empty | 1. Navigate to login page<br>2. Leave both fields empty<br>3. Click Login | "Required" errors should appear under both fields | | |
+| TC-07 | Password Case Sensitivity | 1. Navigate to login page<br>2. Enter valid username<br>3. Enter valid password with different case<br>4. Click Login | Error message "Invalid credentials" should appear | | |
+| TC-08 | Forgot Password Link | 1. Navigate to login page<br>2. Click "Forgot your password?" link | Should redirect to password reset page | | |
+
+### Identified Bugs/Usability Issues
+1. No password strength indicator during account creation
+2. No CAPTCHA or brute force protection on login attempts
+3. Error messages could be more specific (e.g., distinguish between invalid username vs password)
+
+## Automation Test Plan
+
+### Framework Structure
+- Page Object Model (POM) implementation
+- Python with Selenium WebDriver
+- pytest test runner
+- Allure/HTML reporting
+
+### Test Scenarios to Automate
+1. Login with valid credentials
+2. Navigate to PIM module
+3. Add multiple employees
+4. Verify employees in list
+5. Logout flow
+
+### Implementation Approach
+1. Create base page class
+2. Implement page objects for:
+   - Login page
+   - Dashboard
+   - PIM module
+   - Add Employee
+   - Employee List
+3. Create test scripts using the page objects
+4. Implement reporting
